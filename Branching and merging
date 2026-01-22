@@ -1,0 +1,9 @@
+git checkout -b feature
+
+echo "Feature branch work" > feature.txt
+git add feature.txt
+git commit -m "Add feature file"
+
+git checkout main
+git merge feature
+git branch -d feature
