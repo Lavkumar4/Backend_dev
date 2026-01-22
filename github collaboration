@@ -1,0 +1,8 @@
+git clone https://github.com/YOUR_USERNAME/repository-name.git
+cd repository-name
+
+git checkout -b my-feature
+echo "My contribution" >> contribution.txt
+git add .
+git commit -m "Add contribution"
+git push origin my-feature
