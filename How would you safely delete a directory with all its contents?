@@ -1,0 +1,14 @@
+Safely deleting a directory with all contents requires recursion to handle subdirectories and files first, plus error handling to avoid partial failures or permission issues.
+Always verify the path and use try-catch blocks to manage exceptions gracefully.
+
+Key Safety Steps
+Confirm the target path exists and is correct to prevent accidental deletions (e.g., prompt user or log intent).
+
+Handle permissions: Run with sufficient privileges; catch access-denied errors.
+
+Process bottom-up: Delete files, then empty subdirs, finally the root dir.
+
+Use transactions where possible (e.g., filesystem snapshots) for rollback on failure.
+
+Command Line (Windows)
+rmdir /s /q C:\path\to\dir  # /s recursive, /q quiet
