@@ -1,0 +1,6 @@
+| Aspect      | Synchronous                                       | Asynchronous                                            |
+| ----------- | ------------------------------------------------- | ------------------------------------------------------- |
+| Execution   | Blocking; waits for completion distantjob​        | Non-blocking; continues immediately distantjob​         |
+| Performance | Slower for multiple I/O operations mendix​        | Faster for I/O-heavy tasks mendix​                      |
+| Use Case    | Simple scripts with few operations geeksforgeeks​ | Web servers or apps needing concurrency geeksforgeeks​  |
+| Complexity  | Easier to code and debug distantjob​              | Requires handling callbacks or async patterns ramotion​ |
