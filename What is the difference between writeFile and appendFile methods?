@@ -1,0 +1,6 @@
+| Aspect      | writeFile                                 | appendFile                                     |
+| ----------- | ----------------------------------------- | ---------------------------------------------- |
+| Behavior    | Overwrites/replaces all content linkedin​ | Adds to end, keeps existing geeksforgeeks​     |
+| Use Case    | Config files, fresh reports linkedin​     | Logs, audit trails linkedin​                   |
+| File Exists | Truncates and rewrites hayageek​          | Appends without altering geeksforgeeks​        |
+| API Style   | fs.writeFile('file.txt', data) hayageek​  | fs.appendFile('file.txt', data) geeksforgeeks​ |
