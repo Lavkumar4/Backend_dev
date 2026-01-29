@@ -1,0 +1,5 @@
+| Scenario   | Streams Preferred           | Full Read Preferred               |
+| ---------- | --------------------------- | --------------------------------- |
+| File Size  | >100MB stackoverflow​       | <10MB nodejsdesignpatterns​       |
+| Memory Use | Low priority gsblogit​      | High OK stackoverflow​            |
+| Processing | Chunk-by-chunk stackademic​ | All-at-once nodejsdesignpatterns​ |
