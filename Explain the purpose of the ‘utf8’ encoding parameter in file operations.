@@ -1,0 +1,5 @@
+| Scenario          | With 'utf8'                   | Without (Default)          |
+| ----------------- | ----------------------------- | -------------------------- |
+| English text      | Works seamlessly wikipedia​   | Usually fine               |
+| Non-Latin chars   | Correct display datatracks​   | Mojibake or errors reddit​ |
+| Memory efficiency | 1-4 bytes per char wikipedia​ | Varies, often wasteful     |
