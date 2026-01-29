@@ -1,0 +1,22 @@
+Windows Errors
+These are standard Win32 codes returned by APIs like CreateFile
+
+| Code | Meaning                        |
+| ---- | ------------------------------ |
+| 2    | File not found ivanti​         |
+| 3    | Path not found ivanti​         |
+| 5    | Access denied ivanti​          |
+| 15   | Drive not found ivanti​        |
+| 112  | Disk full ivanti​              |
+| 110  | Device/file can't open ivanti​ |
+
+POSIX/Linux Errors
+Mapped to strings like ENOENT; common in Unix-like systems and libraries
+
+| Code        | Meaning                             |
+| ----------- | ----------------------------------- |
+| ENOENT (2)  | No such file or directory chromium​ |
+| EACCES (13) | Permission denied chromium​         |
+| ENOSPC (28) | No space left on device chromium​   |
+| ENFILE (23) | Too many open files chromium​       |
+| EROFS (30)  | Read-only file system chromium​     |
