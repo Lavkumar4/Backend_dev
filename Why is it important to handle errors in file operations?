@@ -1,0 +1,5 @@
+| Risk Without Handling             | With Proper Handling       |
+| --------------------------------- | -------------------------- |
+| Program crash samagracs​          | Continues or exits cleanly |
+| Data corruption askfilo​          | Validates before write     |
+| Poor UX (silent fail) codesignal​ | User-friendly alerts       |
