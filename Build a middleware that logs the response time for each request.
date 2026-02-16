@@ -1,0 +1,26 @@
+Build a middleware that logs the response time for each request.
+
+const logResponseTime = (req, res, next) => {
+  const start = process.hrtime();  // High-res timer
+  
+  res.on('finish', () => {
+    const elapsed = process.hrtime(start);
+    const ms = elapsed[0] * 1000 + elapsed[1] * 1e-6;  // Convert to ms
+    
+    console.log(`${req.method} ${req.path} - ${ms.toFixed(3)}ms`);
+  });
+  
+  next();
+};
+
+
+const express = require('express');
+const app = express();
+
+// Apply globally
+app.use(logResponseTime);
+
+// Your existing routes (e.g., /users)
+app.get('/users', (req, res) => res.json({ users: [] }));
+
+app.listen(3000);
