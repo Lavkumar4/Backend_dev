@@ -1,0 +1,52 @@
+const express = require('express');
+const app = express();
+
+// Sample user data
+const users = [
+  { id: 1, name: 'Alice Johnson' },
+  { id: 2, name: 'Bob Smith' },
+  { id: 3, name: 'Charlie Brown' },
+  { id: 4, name: 'Diana Prince' }
+];
+
+app.get('/api/users', (req, res) => {
+  const { name } = req.query;
+  
+  // If no name filter provided, return all users
+  if (!name) {
+    return res.json({
+      success: true,
+      data: users,
+      total: users.length
+    });
+  }
+  
+  // Filter users by name (case-insensitive partial match)
+  const filteredUsers = users.filter(user =>
+    user.name.toLowerCase().includes(name.toLowerCase())
+  );
+  
+  res.json({
+    success: true,
+    data: filteredUsers,
+    total: filteredUsers.length,
+    filter: name
+  });
+});
+
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
+
+
+GET /api/users
+→ Returns all 4 users
+
+GET /api/users?name=alice
+→ [{ id: 1, name: 'Alice Johnson' }]
+
+GET /api/users?name=bob
+→ [{ id: 2, name: 'Bob Smith' }]
+
+GET /api/users?name=own
+→ [{ id: 3, name: 'Charlie Brown' }]
