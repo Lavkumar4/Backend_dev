@@ -1,0 +1,36 @@
+Build a simple blog with routes for listing posts, viewing individual posts, and creating new
+posts.
+
+<h1>Blog Posts</h1>
+<% posts.forEach(post => { %>
+  <article>
+    <h2><a href="/blog/<%= post.id %>"><%= post.title %></a></h2>
+    <p><%= post.content.substring(0, 100) %>...</p>
+  </article>
+<% }) %>
+<a href="/blog/new">New Post</a>
+
+views/blog/new.ejs:
+
+<h1>New Post</h1>
+<form method="POST">
+  <input type="text" name="title" placeholder="Title" required><br>
+  <textarea name="content" placeholder="Content" required></textarea><br>
+  <button type="submit">Create Post</button>
+</form>
+<a href="/blog">Back</a>
+
+
+views/blog/new.ejs:
+
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+<a href="/blog">Back to Blog</a>
+
+npm init -y
+npm i express ejs
+mkdir views public/images blog
+# Add your images to public/images/
+node app.js
+
