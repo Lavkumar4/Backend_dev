@@ -1,0 +1,41 @@
+const express = require('express');
+const app = express();
+
+const users = [
+  { id: 1, name: 'John Doe' },
+  { id: 2, name: 'Jane Smith' },
+  { id: 3, name: 'John Wilson' }
+];
+
+app.get('/users', (req, res) => {
+  const { name } = req.query;  // Extract 'name' query param (e.g., ?name=John)
+  
+  let filteredUsers = users;
+  if (name) {
+    filteredUsers = users.filter(user => 
+      user.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+  
+  res.json(filteredUsers);
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+
+
+
+// users.controller.ts
+import { Controller, Get, Query } from '@nestjs/common';
+
+@Controller('users')
+export class UsersController {
+  private users = [ /* same array as above */ ];
+
+  @Get()
+  findUsers(@Query('name') name?: string) {
+    if (!name) return this.users;
+    return this.users.filter(user => 
+      user.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+}
