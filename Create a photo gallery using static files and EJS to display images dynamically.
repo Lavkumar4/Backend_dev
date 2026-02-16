@@ -1,0 +1,14 @@
+Create a photo gallery using static files and EJS to display images dynamically.
+
+<!DOCTYPE html>
+<html>
+<head><title>Photo Gallery</title></head>
+<body>
+  <h1>Photo Gallery</h1>
+  <% images.forEach(img => { %>
+    <div>
+      <img src="/images/<%= img %>" alt="Photo" style="max-width: 300px;">
+    </div>
+  <% }) %>
+</body>
+</html>
