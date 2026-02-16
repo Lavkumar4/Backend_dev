@@ -12,3 +12,12 @@ Create a photo gallery using static files and EJS to display images dynamically.
   <% }) %>
 </body>
 </html>
+
+
+Route addition in app.js:
+// Photo gallery - add this route
+app.get('/gallery', (req, res) => {
+  res.render('gallery', { 
+    images: ['photo1.jpg', 'photo2.jpg', 'photo3.jpg'] 
+  });
+});
