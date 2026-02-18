@@ -1,0 +1,16 @@
+Query parameters: Add ?author=<name> and ?year=<year> as optional filters to /books.
+
+Expected behavior:
+
+GET /books                    → all books
+GET /books?author=Orwell      → books where author matches "Orwell"  
+GET /books?year=1945          → books where year = 1945
+GET /books?author=Orwell&year=1945  → books matching BOTH filters
+
+Server Implementation Pattern
+
+GET /books:
+1. Start with full books collection
+2. If `author` param exists → filter collection where book.author == param
+3. If `year` param exists → filter collection where book.year == param  
+4. Return filtered results (with pagination if needed)
